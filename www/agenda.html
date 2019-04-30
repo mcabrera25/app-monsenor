@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Palabras Multimedia</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/fullcalendar.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/main.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+
+
+
+
+
+ 
+  <body>
+
+
+ 
+    <div class="navbar navbar-fixed">
+      
+      <div class="navbar-header">
+          <div class="col-xs-2">
+            <a href="index.html"><i class="fa fa-arrow-left fa-2x"></i></a>
+          </div>
+          <div class="col-xs-2 col-xs-offset-8">
+           
+      </div>
+
+    </div>
+
+    <div class="wrapper wrapper-content animated fadeIn ">
+        <div class="container marginTopP25">
+	        <div class="row" >
+	        	<div id="calendario">
+	        	</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/index.js"></script>    
+    <script src="js/jquery-3.1.1.min.js"></script>    
+     <script src="js/moment.min.js"></script>
+    <script src="js/calendar.min.js"></script>
+     <script src="js/fullcalendar.min.js"></script>
+     
+ <script type="text/javascript">
+
+
+   var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+    $(document).ready(function(){
+        $('#calendario').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            droppable: true, // this allows things to be dropped onto the calendar
+            drop: function() {
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+            },
+            events: [{title: "primer evento", start: "2017-04-12 09:00:00", end: "2017-01-12 12:00:00"},{title: "segundo evento:pero cuando se trata de una creencia religiosa podemos aceptar ciegamente lo que nuestro corazón siente una vez que llegamos a conocer a Cristo como el ser a quien le debemos nuestra existencia. " , start: "2017-04-12 02:00:00", end: "2017-11-10 02:00:00"},{title: "evento palabras multimedia", start: "2017-01-13 07:00:00", end: "2017-01-12 08:00:00"},{title: "palabras multimedia", start: "2017-01-12 07:00:00", end: "2017-01-13 08:00:00"}
+            ]
+        });
+
+    });
+
+  </script>
+  </div>
+  </body>
+ 
+</html>
+
+  
+
+
+  
